@@ -1,6 +1,6 @@
 package br.com.anunciarte.bananarosa;
 
-import br.com.anunciarte.bananarosa.model.EnderecoDados;
+import br.com.anunciarte.bananarosa.model.DadosEndereco;
 import br.com.anunciarte.bananarosa.service.ConsumoAPI;
 import br.com.anunciarte.bananarosa.service.ConverteDados;
 import org.springframework.boot.CommandLineRunner;
@@ -16,11 +16,7 @@ public class BananaRosaApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		ConsumoAPI consumoAPI = new ConsumoAPI();
-		var json = consumoAPI.obterDados("https://viacep.com.br/ws/06026000/json/");
-		System.out.println(json);
-		ConverteDados converteDados = new ConverteDados();
-		EnderecoDados enderecoDados = converteDados.obterDados(json, EnderecoDados.class);
-		System.out.println(enderecoDados);
+		Principal principal = new Principal();
+		principal.principal();
 	}
 }
